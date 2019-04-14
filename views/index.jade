@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  p #{message}
+  form#fileUpload(method="post" action="/" enctype="multipart/form-data")
+    label(for="payload") Select a file to upload:
+    input#payload(type="file" name="file" accept="image/*")
+    br
+    button#upload Upload
+    a(href='/download-csv') Download CSV File
